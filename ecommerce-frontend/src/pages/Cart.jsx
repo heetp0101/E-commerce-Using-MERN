@@ -77,6 +77,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom"; // ✅ import navigation hook
+import { API_BASE } from "../config";
 
 function Cart() {
   const [cart, setCart] = useState([]);
@@ -91,7 +92,7 @@ function Cart() {
 
   const fetchCart = async () => {
     try {
-      const res = await axios.get("http://127.0.0.1:4000/api/cart", {
+      const res = await axios.get(`${API_BASE}api/cart`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       // cart document contains `items` array
@@ -105,7 +106,7 @@ function Cart() {
 
   const handleRemove = async (productId) => {
     try {
-      await axios.delete(`http://127.0.0.1:4000/api/cart/remove/${productId}`, {
+      await axios.delete(`${API_BASE}/api/cart/remove/${productId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       fetchCart(); // refresh after removal

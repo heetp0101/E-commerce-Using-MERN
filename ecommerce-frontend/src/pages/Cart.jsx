@@ -92,7 +92,7 @@ function Cart() {
 
   const fetchCart = async () => {
     try {
-      const res = await axios.get(`${API_BASE}api/cart`, {
+      const res = await axios.get(`${API_BASE}/api/cart`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       // cart document contains `items` array

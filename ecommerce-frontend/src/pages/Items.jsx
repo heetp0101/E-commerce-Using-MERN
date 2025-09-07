@@ -242,6 +242,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom"; // ✅ import navigation hook
 import "./Items.css"; // Import the CSS file
+import { API_BASE } from "../config";
 
 const Items = () => {
   const [items, setItems] = useState([]);
@@ -259,7 +260,7 @@ const Items = () => {
   useEffect(() => {
     const fetchItems = async () => {
       try {
-        const res = await fetch("http://localhost:4000/items");
+        const res = await fetch(`${API_BASE}/items`);
         if (!res.ok) throw new Error("Failed to fetch items");
         const data = await res.json();
         setItems(data);
@@ -276,7 +277,7 @@ const Items = () => {
   const addToCart = async (itemId) => {
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch("http://localhost:4000/api/cart/add", {
+      const res = await fetch(`${API_BASE}/api/cart/add`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

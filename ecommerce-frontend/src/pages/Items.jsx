@@ -300,7 +300,7 @@ const Items = () => {
   // ✅ Logout function
   const handleLogout = () => {
     localStorage.removeItem("token"); // clear token
-    navigate("/login"); // redirect to login page
+    navigate("/"); // redirect to login page
   };
 
   if (loading) return <p className="loading-text">Loading items...</p>;

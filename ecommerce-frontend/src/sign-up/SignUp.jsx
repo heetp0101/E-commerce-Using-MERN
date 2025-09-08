@@ -132,7 +132,7 @@ export default function SignUp(props) {
     try {
       await API.post("/auth/signup", form);
       alert("Signup successful! Please login.");
-      navigate("/login");
+      navigate("/");
     } catch (err) {
       setError(err.response?.data?.error || "Signup failed");
     }

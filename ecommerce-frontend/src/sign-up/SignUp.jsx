@@ -240,10 +240,10 @@ export default function SignUp(props) {
             </Button>
             <Typography sx={{ textAlign: 'center' }}>
               Already have an account?{' '}
-              <Link
-                href="/material-ui/getting-started/templates/sign-in/"
+              <Link              
                 variant="body2"
-                sx={{ alignSelf: 'center' }}
+                sx={{ alignSelf: 'center', cursor:'pointer' }}
+                onClick={() => navigate("/")}
               >
                 Sign in
               </Link>

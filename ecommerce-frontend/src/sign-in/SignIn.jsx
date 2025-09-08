@@ -247,7 +247,7 @@ export default function SignIn(props) {
               Don&apos;t have an account?{' '}
               <Link                
                 variant="body2"
-                sx={{ alignSelf: 'center' }}
+                sx={{ alignSelf: 'center', cursor:"pointer"}}
                 onClick={() => navigate("/signup")}
               >
                 Sign up
